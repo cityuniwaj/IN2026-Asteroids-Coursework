@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A573C32D-8F4C-442B-84A7-287D28FFA333}</ProjectGuid>
+    <RootNamespace>Game Engine</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)..\..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)..\..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)\..\lib\Engine.lib</OutputFile>
+      <AdditionalLibraryDirectories>../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib</AdditionalDependencies>
+    </Lib>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)\..\lib\Engine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Src\Animation.cpp" />
+    <ClCompile Include="..\..\Src\AnimationManager.cpp" />
+    <ClCompile Include="..\..\src\GameDisplay.cpp" />
+    <ClCompile Include="..\..\src\GameObject.cpp" />
+    <ClCompile Include="..\..\Src\GameObjectType.cpp" />
+    <ClCompile Include="..\..\src\GameSession.cpp" />
+    <ClCompile Include="..\..\src\GameWindow.cpp" />
+    <ClCompile Include="..\..\src\GameWorld.cpp" />
+    <ClCompile Include="..\..\src\GlutSession.cpp" />
+    <ClCompile Include="..\..\src\GlutWindow.cpp" />
+    <ClCompile Include="..\..\src\GLVector.cpp" />
+    <ClCompile Include="..\..\src\GUIComponent.cpp" />
+    <ClCompile Include="..\..\src\GUIContainer.cpp" />
+    <ClCompile Include="..\..\src\GUIIcon.cpp" />
+    <ClCompile Include="..\..\src\GUILabel.cpp" />
+    <ClCompile Include="..\..\src\Image.cpp" />
+    <ClCompile Include="..\..\src\ImageManager.cpp" />
+    <ClCompile Include="..\..\src\MovementController.cpp" />
+    <ClCompile Include="..\..\Src\Shape.cpp" />
+    <ClCompile Include="..\..\src\Sprite.cpp" />
+    <ClCompile Include="..\..\src\Texture.cpp" />
+    <ClCompile Include="..\..\src\TextureManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\Animation.h" />
+    <ClInclude Include="..\..\Src\AnimationManager.h" />
+    <ClInclude Include="..\..\Src\BoundingShape.h" />
+    <ClInclude Include="..\..\src\GameDisplay.h" />
+    <ClInclude Include="..\..\src\GameObject.h" />
+    <ClInclude Include="..\..\Src\GameObjectType.h" />
+    <ClInclude Include="..\..\src\GameSession.h" />
+    <ClInclude Include="..\..\src\GameUtil.h" />
+    <ClInclude Include="..\..\src\GameWindow.h" />
+    <ClInclude Include="..\..\src\GameWorld.h" />
+    <ClInclude Include="..\..\src\GlutSession.h" />
+    <ClInclude Include="..\..\src\GlutWindow.h" />
+    <ClInclude Include="..\..\src\GLVector.h" />
+    <ClInclude Include="..\..\src\GUIComponent.h" />
+    <ClInclude Include="..\..\src\GUIContainer.h" />
+    <ClInclude Include="..\..\src\GUIIcon.h" />
+    <ClInclude Include="..\..\src\GUILabel.h" />
+    <ClInclude Include="..\..\SRC\BoundingSphere.h" />
+    <ClInclude Include="..\..\src\IGameWorldListener.h" />
+    <ClInclude Include="..\..\src\IKeyboardListener.h" />
+    <ClInclude Include="..\..\src\Image.h" />
+    <ClInclude Include="..\..\src\ImageManager.h" />
+    <ClInclude Include="..\..\src\IMouseListener.h" />
+    <ClInclude Include="..\..\src\ITimerListener.h" />
+    <ClInclude Include="..\..\Src\IWindowListener.h" />
+    <ClInclude Include="..\..\Src\Shape.h" />
+    <ClInclude Include="..\..\src\SmartPtr.h" />
+    <ClInclude Include="..\..\src\Sprite.h" />
+    <ClInclude Include="..\..\src\Texture.h" />
+    <ClInclude Include="..\..\src\TextureManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
