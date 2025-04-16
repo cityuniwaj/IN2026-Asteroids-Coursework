@@ -170,6 +170,11 @@ void Asteroids::OnTimer(int value)
 		mGameOverLabel->SetVisible(true);
 	}
 
+	if (value == SHOW_RETRY_OPTION)
+	{
+		mRetryLabel->SetVisible(true);
+	}
+
 }
 
 // PROTECTED INSTANCE METHODS /////////////////////////////////////////////////
@@ -244,6 +249,19 @@ void Asteroids::CreateGUI()
 		= static_pointer_cast<GUIComponent>(mGameOverLabel);
 	mGameDisplay->GetContainer()->AddComponent(game_over_component, GLVector2f(0.5f, 0.5f));
 
+	// Create a new GUILabel and wrap it up in a shared_ptr
+	mRetryLabel = shared_ptr<GUILabel>(new GUILabel("SPACE TO RESTART"));
+	// Set the horizontal alignment of the label to GUI_HALIGN_CENTER
+	mRetryLabel->SetHorizontalAlignment(GUIComponent::GUI_HALIGN_CENTER);
+	// Set the vertical alignment of the label to GUI_VALIGN_MIDDLE
+	mRetryLabel->SetVerticalAlignment(GUIComponent::GUI_VALIGN_MIDDLE);
+	// Set the visibility of the label to false (hidden)
+	mRetryLabel->SetVisible(false);
+	// Add the GUILabel to the GUIContainer  
+	shared_ptr<GUIComponent> retry_component
+		= static_pointer_cast<GUIComponent>(mRetryLabel);
+	mGameDisplay->GetContainer()->AddComponent(retry_component, GLVector2f(0.5f, 0.4f));
+
 }
 
 void Asteroids::OnScoreChanged(int score)
@@ -277,6 +295,7 @@ void Asteroids::OnPlayerKilled(int lives_left)
 	else
 	{
 		SetTimer(500, SHOW_GAME_OVER);
+		SetTimer(1500, SHOW_RETRY_OPTION);
 	}
 }
 
