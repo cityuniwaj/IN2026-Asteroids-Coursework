@@ -11,6 +11,8 @@ public:
 
 	bool CollisionTest(shared_ptr<GameObject> o);
 	void OnCollision(const GameObjectList& objects);
+	void Bounce(shared_ptr<Asteroid> o);
+	float GetSize() const { return mScale * 10.0f; }
 };
 
 #endif
