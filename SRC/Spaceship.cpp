@@ -100,7 +100,19 @@ bool Spaceship::CollisionTest(shared_ptr<GameObject> o)
 	return mBoundingShape->CollisionTest(o->GetBoundingShape());
 }
 
-void Spaceship::OnCollision(const GameObjectList &objects)
+void Spaceship::OnCollision(const GameObjectList& objects)
 {
-	mWorld->FlagForRemoval(GetThisPtr());
+	for (auto gameObject : objects)
+	{
+		if (gameObject->GetType() == GameObjectType("SmallAsteroid"))
+		{
+			return;
+		}
+
+		if (gameObject->GetType() == GameObjectType("Asteroid"))
+		{
+			mWorld->FlagForRemoval(GetThisPtr());
+			return;
+		}
+	}
 }

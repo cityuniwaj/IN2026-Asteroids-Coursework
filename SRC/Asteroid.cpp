@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include "GameUtil.h"
 #include "Asteroid.h"
+#include "SmallAsteroid.h"
 #include "BoundingShape.h"
+#include "BoundingSphere.h"
 
 Asteroid::Asteroid(void) : GameObject("Asteroid")
 {
@@ -28,18 +30,64 @@ bool Asteroid::CollisionTest(shared_ptr<GameObject> o)
 
 void Asteroid::OnCollision(const GameObjectList& objects)
 {
-    // Handle collisions with different types of objects
     for (auto gameObject : objects)
     {
         // If collision with another asteroid, bounce
-        if (gameObject->GetType() == GameObjectType("Asteroid"))
+        if (gameObject->GetType() == GameObjectType("Asteroid") || 
+            gameObject->GetType() == GameObjectType("SmallAsteroid"))
         {
             shared_ptr<Asteroid> otherAsteroid = static_pointer_cast<Asteroid>(gameObject);
             Bounce(otherAsteroid);
             return;
         }
+        
+        // Check for bullet collision
+        if (gameObject->GetType() == GameObjectType("Bullet"))
+        {
+            mDestroyedByBullet = true;
+
+            // Create 2-3 small asteroids
+            int numSmallAsteroids = 2 + (rand() % 2);
+            
+            for (int i = 0; i < numSmallAsteroids; i++)
+            {
+                // Small asteroid new velocities
+                float angle = ((float)rand() / RAND_MAX) * 360.0f;
+                GLVector3f newVelocity = mVelocity * 0.5f;
+                GLVector3f variation(cos(DEG2RAD*angle), sin(DEG2RAD*angle), 0.0f);
+                newVelocity = newVelocity + variation * 5.0f;
+                
+				// Small asteroid new position
+                GLVector3f offset(
+                    ((float)rand() / RAND_MAX * 2.0f - 1.0f) * 2.0f,
+                    ((float)rand() / RAND_MAX * 2.0f - 1.0f) * 2.0f,
+                    0.0f
+                );
+                GLVector3f newPosition = mPosition + offset;
+                
+                // Create small asteroid
+                shared_ptr<SmallAsteroid> smallAsteroid = make_shared<SmallAsteroid>(newPosition, newVelocity);
+                
+                // Sprite and bounding shape
+                smallAsteroid->SetSprite(mSprite);
+                shared_ptr<BoundingSphere> boundingSphere = make_shared<BoundingSphere>(smallAsteroid, 5.0f);
+                smallAsteroid->SetBoundingShape(boundingSphere);
+                
+                // Add to world
+                mWorld->AddObject(smallAsteroid);
+            }
+            
+            // Remove this asteroid
+            mWorld->FlagForRemoval(GetThisPtr());
+            return;
+        }
+
+        if (gameObject->GetType() == GameObjectType("Spaceship"))
+		{
+            mDestroyedByBullet = false;
+			mWorld->FlagForRemoval(GetThisPtr());
+		}
     }
-    mWorld->FlagForRemoval(GetThisPtr());
 }
 
 void Asteroid::Bounce(shared_ptr<Asteroid> otherAsteroid)

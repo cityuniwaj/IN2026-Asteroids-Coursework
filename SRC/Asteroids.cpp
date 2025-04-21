@@ -1,4 +1,5 @@
 #include "Asteroid.h"
+#include "SmallAsteroid.h"
 #include "Asteroids.h"
 #include "Animation.h"
 #include "AnimationManager.h"

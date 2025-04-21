@@ -108,6 +108,7 @@
     <ClCompile Include="..\..\src\Bullet.cpp" />
     <ClCompile Include="..\..\SRC\Explosion.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\SRC\SmallAsteroid.cpp" />
     <ClCompile Include="..\..\src\Spaceship.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,7 @@
     <ClInclude Include="..\..\SRC\IScoreListener.h" />
     <ClInclude Include="..\..\SRC\Player.h" />
     <ClInclude Include="..\..\SRC\ScoreKeeper.h" />
+    <ClInclude Include="..\..\SRC\SmallAsteroid.h" />
     <ClInclude Include="..\..\src\Spaceship.h" />
   </ItemGroup>
   <ItemGroup>

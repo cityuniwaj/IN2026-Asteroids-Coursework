@@ -13,6 +13,10 @@ public:
 	void OnCollision(const GameObjectList& objects);
 	void Bounce(shared_ptr<Asteroid> o);
 	float GetSize() const { return mScale * 10.0f; }
+	bool WasDestroyedByBullet() const { return mDestroyedByBullet; }
+
+private:
+	bool mDestroyedByBullet = false;
 };
 
 #endif
