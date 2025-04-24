@@ -8,7 +8,7 @@ SmallAsteroid::SmallAsteroid(void) : Asteroid()
     mType = GameObjectType("SmallAsteroid");
     mVelocity = mVelocity * 1.2f;
     mScale = 0.1f;
-    mTimeToLive = 10000;
+    mTimeToLive = 5000;
 }
 
 SmallAsteroid::SmallAsteroid(const GLVector3f& position, const GLVector3f& velocity) : Asteroid()
