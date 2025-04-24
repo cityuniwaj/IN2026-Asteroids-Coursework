@@ -12,6 +12,7 @@
 #include "BoundingSphere.h"
 #include "GUILabel.h"
 #include "Explosion.h"
+#include "ExtraLifePowerup.h"
 
 // PUBLIC INSTANCE CONSTRUCTORS ///////////////////////////////////////////////
 
@@ -48,6 +49,9 @@ void Asteroids::Start()
 	// Add this class as a listener of the score keeper
 	mScoreKeeper.AddListener(thisPtr);
 
+	// Set timer for the first powerup
+	SetTimer(POWERUP_SPAWN_INTERVAL, SPAWN_POWERUP);
+
 	// Create an ambient light to show sprite textures
 	GLfloat ambient_light[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	GLfloat diffuse_light[] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -58,6 +62,9 @@ void Asteroids::Start()
 	Animation *explosion_anim = AnimationManager::GetInstance().CreateAnimationFromFile("explosion", 64, 1024, 64, 64, "explosion_fs.png");
 	Animation *asteroid1_anim = AnimationManager::GetInstance().CreateAnimationFromFile("asteroid1", 128, 8192, 128, 128, "asteroid1_fs.png");
 	Animation *spaceship_anim = AnimationManager::GetInstance().CreateAnimationFromFile("spaceship", 128, 128, 128, 128, "spaceship_fs.png");
+	Animation* shipBubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("shipBubble", 128, 128, 128, 128, "shipBubble_fs.png");
+	Animation *heart_anim = AnimationManager::GetInstance().CreateAnimationFromFile("heart", 128, 128, 128, 128, "heart_fs.png");
+	Animation *bubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("bubble", 128, 128, 128, 128, "bubble_fs.png");
 
 	// Create a spaceship and add it to the world
 	mGameWorld->AddObject(CreateSpaceship());
@@ -174,6 +181,11 @@ void Asteroids::OnTimer(int value)
 	if (value == SHOW_RETRY_OPTION)
 	{
 		mRetryLabel->SetVisible(true);
+	}
+
+	if (value == SPAWN_POWERUP)
+	{
+		SpawnExtraLifePowerup();
 	}
 
 }
@@ -312,6 +324,32 @@ shared_ptr<GameObject> Asteroids::CreateExplosion()
 	return explosion;
 }
 
+void Asteroids::SpawnExtraLifePowerup()
+{
+	// Create a powerup at a random position
+	float x = ((float)rand() / RAND_MAX) * 100.0f - 50.0f;
+	float y = ((float)rand() / RAND_MAX) * 100.0f - 50.0f;
+	GLVector3f position(x, y, 0.0f);
 
+	// Create the powerup
+	shared_ptr<GameObject> powerup = make_shared<ExtraLifePowerup>(position);
+
+	// Load the heart sprite
+	Animation* heart_anim = AnimationManager::GetInstance().GetAnimationByName("heart");
+	shared_ptr<Sprite> powerup_sprite = make_shared<Sprite>(heart_anim->GetWidth(), heart_anim->GetHeight(), heart_anim);
+	powerup->SetSprite(powerup_sprite);
+
+	// Set bounding shape
+	powerup->SetBoundingShape(make_shared<BoundingSphere>(powerup->GetThisPtr(), 4.0f));
+
+	// Set scale
+	powerup->SetScale(0.075f);
+
+	// Add to world
+	mGameWorld->AddObject(powerup);
+
+	// Set timer for next powerup
+	SetTimer(POWERUP_SPAWN_INTERVAL, SPAWN_POWERUP);
+}
 
 

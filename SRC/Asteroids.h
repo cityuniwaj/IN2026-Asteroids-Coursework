@@ -67,9 +67,13 @@ private:
 	const static uint START_NEXT_LEVEL = 1;
 	const static uint CREATE_NEW_PLAYER = 2;
 	const static uint SHOW_RETRY_OPTION = 3;
+	const static uint SPAWN_POWERUP = 4;
 
 	ScoreKeeper mScoreKeeper;
 	Player mPlayer;
+
+	const int POWERUP_SPAWN_INTERVAL = 1000; // THIS IS THE POWER UP SPAWNER INTERVAL IT IS RIGHT HERE DONT FORGET STOP FORGETTING
+	void SpawnExtraLifePowerup();
 };
 
 #endif
