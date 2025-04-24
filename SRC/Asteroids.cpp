@@ -62,7 +62,7 @@ void Asteroids::Start()
 	Animation *explosion_anim = AnimationManager::GetInstance().CreateAnimationFromFile("explosion", 64, 1024, 64, 64, "explosion_fs.png");
 	Animation *asteroid1_anim = AnimationManager::GetInstance().CreateAnimationFromFile("asteroid1", 128, 8192, 128, 128, "asteroid1_fs.png");
 	Animation *spaceship_anim = AnimationManager::GetInstance().CreateAnimationFromFile("spaceship", 128, 128, 128, 128, "spaceship_fs.png");
-	Animation* shipBubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("shipBubble", 128, 128, 128, 128, "shipBubble_fs.png");
+	Animation *shipBubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("shipBubble", 128, 128, 128, 128, "shipBubble_fs.png");
 	Animation *heart_anim = AnimationManager::GetInstance().CreateAnimationFromFile("heart", 128, 128, 128, 128, "heart_fs.png");
 	Animation *bubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("bubble", 128, 128, 128, 128, "bubble_fs.png");
 
@@ -153,6 +153,12 @@ void Asteroids::OnObjectRemoved(GameWorld* world, shared_ptr<GameObject> object)
 		{ 
 			SetTimer(500, START_NEXT_LEVEL); 
 		}
+	}
+
+	if (object->GetType() == GameObjectType("ExtraLifePowerup"))
+	{
+		mPlayer.addLife();
+		mLivesLabel->SetText("Lives: " + std::to_string(mPlayer.getLives()));
 	}
 }
 

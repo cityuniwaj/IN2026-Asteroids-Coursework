@@ -75,6 +75,7 @@ void SmallAsteroid::Update(int t)
     }
 
     if (mTimeToLive == 0) {
-        if (mWorld) mWorld->FlagForRemoval(GetThisPtr());
+        //if (mWorld) mWorld->FlagForRemoval(GetThisPtr());
+        return;
     }
 }

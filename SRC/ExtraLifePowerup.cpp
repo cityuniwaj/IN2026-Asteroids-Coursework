@@ -9,13 +9,13 @@ ExtraLifePowerup::ExtraLifePowerup(void) : GameObject("ExtraLifePowerup")
     mPosition.x = 0.0f;
     mPosition.y = 0.0f;
     mPosition.z = 0.0f;
-    mTimeToLive = 15000;
+    mTimeToLive = 20000;
 }
 
 ExtraLifePowerup::ExtraLifePowerup(const GLVector3f& position) : GameObject("ExtraLifePowerup")
 {
     mPosition = position;
-    mTimeToLive = 15000;
+    mTimeToLive = 20000;
 }
 
 ExtraLifePowerup::~ExtraLifePowerup(void)

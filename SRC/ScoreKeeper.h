@@ -7,6 +7,7 @@
 #include "GameObjectType.h"
 #include "IScoreListener.h"
 #include "IGameWorldListener.h"
+#include "Asteroid.h"
 
 class ScoreKeeper : public IGameWorldListener
 {
