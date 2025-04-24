@@ -33,7 +33,7 @@ public:
 			}
 		}
 		else if (object->GetType() == GameObjectType("SmallAsteroid")) {
-			mScore += 20;
+			mScore += 5;
 			FireScoreChanged();
 		}
 	}
