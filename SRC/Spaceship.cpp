@@ -3,6 +3,8 @@
 #include "Bullet.h"
 #include "Spaceship.h"
 #include "BoundingSphere.h"
+#include "Animation.h"
+#include "AnimationManager.h"
 
 using namespace std;
 
@@ -10,7 +12,7 @@ using namespace std;
 
 /**  Default constructor. */
 Spaceship::Spaceship()
-	: GameObject("Spaceship"), mThrust(0)
+	: GameObject("Spaceship"), mThrust(0), mIsInvincible(false), mInvincibilityTime(0)
 {
 }
 
@@ -38,6 +40,19 @@ void Spaceship::Update(int t)
 {
 	// Call parent update function
 	GameObject::Update(t);
+
+	if (mIsInvincible)
+	{
+		mInvincibilityTime -= t;
+		if (mInvincibilityTime <= 0)
+		{
+			mIsInvincible = false;
+			if (mNormalSprite)
+			{
+				SetSprite(mNormalSprite);
+			}
+		}
+	}
 }
 
 /** Render this spaceship. */
@@ -56,7 +71,7 @@ void Spaceship::Render(void)
 /** Fire the rockets. */
 void Spaceship::Thrust(float t)
 {
-	mThrust = t;
+	mThrust = t*5;
 	// Increase acceleration in the direction of ship
 	mAcceleration.x = mThrust*cos(DEG2RAD*mAngle);
 	mAcceleration.y = mThrust*sin(DEG2RAD*mAngle);
@@ -65,7 +80,7 @@ void Spaceship::Thrust(float t)
 /** Set the rotation. */
 void Spaceship::Rotate(float r)
 {
-	mRotation = r;
+	mRotation = r*2.5;
 }
 
 /** Shoot a bullet. */
@@ -94,7 +109,17 @@ void Spaceship::Shoot(void)
 
 bool Spaceship::CollisionTest(shared_ptr<GameObject> o)
 {
-	if (o->GetType() == GameObjectType("ExtraLifePowerup")) return false;
+	if (o->GetType() == GameObjectType("ExtraLifePowerup") ||
+		o->GetType() == GameObjectType("InvincibilityPowerup"))
+	{
+		if (mBoundingShape.get() == NULL) return false;
+		if (o->GetBoundingShape().get() == NULL) return false;
+		return mBoundingShape->CollisionTest(o->GetBoundingShape());
+	}
+	
+	if (mIsInvincible && o->GetType() == GameObjectType("Asteroid")){return false;}
+
+	// Normal collision test for asteroids
 	if (o->GetType() != GameObjectType("Asteroid")) return false;
 	if (mBoundingShape.get() == NULL) return false;
 	if (o->GetBoundingShape().get() == NULL) return false;
@@ -103,6 +128,8 @@ bool Spaceship::CollisionTest(shared_ptr<GameObject> o)
 
 void Spaceship::OnCollision(const GameObjectList& objects)
 {
+	if (mIsInvincible) {return;}
+
 	for (auto gameObject : objects)
 	{
 		if (gameObject->GetType() == GameObjectType("SmallAsteroid"))
@@ -115,5 +142,22 @@ void Spaceship::OnCollision(const GameObjectList& objects)
 			mWorld->FlagForRemoval(GetThisPtr());
 			return;
 		}
+	}
+}
+
+void Spaceship::MakeInvincible(int duration)
+{
+	mIsInvincible = true;
+	mInvincibilityTime = duration;
+	if (!mNormalSprite)
+	{
+		mNormalSprite = mSprite;
+	}
+
+	Animation* anim_ptr = AnimationManager::GetInstance().GetAnimationByName("shipBubble");
+	if (anim_ptr)
+	{
+		shared_ptr<Sprite> invincibleSprite = make_shared<Sprite>(anim_ptr->GetWidth(), anim_ptr->GetHeight(), anim_ptr);
+		SetSprite(invincibleSprite);
 	}
 }

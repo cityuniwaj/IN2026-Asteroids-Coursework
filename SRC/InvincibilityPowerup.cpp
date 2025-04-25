@@ -2,6 +2,7 @@
 #include "BoundingSphere.h"
 #include "GameUtil.h"
 #include "GameWorld.h"
+#include "Spaceship.h"
 
 InvincibilityPowerup::InvincibilityPowerup(void) : GameObject("InvincibilityPowerup")
 {
@@ -48,6 +49,11 @@ void InvincibilityPowerup::OnCollision(const GameObjectList& objects)
     {
         if (gameObject->GetType() == GameObjectType("Spaceship"))
         {
+            shared_ptr<Spaceship> spaceship = static_pointer_cast<Spaceship>(gameObject);
+            if (spaceship)
+            {
+                spaceship->MakeInvincible(10000);
+            }
             mWorld->FlagForRemoval(GetThisPtr());
             return;
         }

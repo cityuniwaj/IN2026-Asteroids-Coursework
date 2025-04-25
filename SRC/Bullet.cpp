@@ -12,7 +12,7 @@ Bullet::Bullet()
 
 /** Construct a new bullet with given position, velocity, acceleration, angle, rotation and lifespan. */
 Bullet::Bullet(GLVector3f p, GLVector3f v, GLVector3f a, GLfloat h, GLfloat r, int ttl)
-	: GameObject("Bullet", p, v, a, h, r), mTimeToLive(ttl)
+	: GameObject("Bullet", p, v*2, a, h, r), mTimeToLive(ttl)
 {
 }
 

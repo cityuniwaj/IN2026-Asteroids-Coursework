@@ -4,6 +4,7 @@
 #include "SmallAsteroid.h"
 #include "BoundingShape.h"
 #include "BoundingSphere.h"
+#include "Spaceship.h"
 
 Asteroid::Asteroid(void) : GameObject("Asteroid")
 {
@@ -34,60 +35,91 @@ void Asteroid::OnCollision(const GameObjectList& objects)
     for (auto gameObject : objects)
     {
         // If collision with another asteroid, bounce
-        if (gameObject->GetType() == GameObjectType("Asteroid") || 
+        if (gameObject->GetType() == GameObjectType("Asteroid") ||
             gameObject->GetType() == GameObjectType("SmallAsteroid"))
         {
             shared_ptr<Asteroid> otherAsteroid = static_pointer_cast<Asteroid>(gameObject);
             Bounce(otherAsteroid);
             return;
         }
-        
+
         // Check for bullet collision
         if (gameObject->GetType() == GameObjectType("Bullet"))
         {
             mDestroyedByBullet = true;
-
             // Create 2-3 small asteroids
             int numSmallAsteroids = 2 + (rand() % 2);
-            
+
             for (int i = 0; i < numSmallAsteroids; i++)
             {
                 // Small asteroid new velocities
                 float angle = ((float)rand() / RAND_MAX) * 360.0f;
                 GLVector3f newVelocity = mVelocity * 0.5f;
-                GLVector3f variation(cos(DEG2RAD*angle), sin(DEG2RAD*angle), 0.0f);
+                GLVector3f variation(cos(DEG2RAD * angle), sin(DEG2RAD * angle), 0.0f);
                 newVelocity = newVelocity + variation * 5.0f;
-                
-				// Small asteroid new position
+
+                // Small asteroid new position
                 GLVector3f offset(
                     ((float)rand() / RAND_MAX * 2.0f - 1.0f) * 2.0f,
                     ((float)rand() / RAND_MAX * 2.0f - 1.0f) * 2.0f,
                     0.0f
                 );
                 GLVector3f newPosition = mPosition + offset;
-                
+
                 // Create small asteroid
                 shared_ptr<SmallAsteroid> smallAsteroid = make_shared<SmallAsteroid>(newPosition, newVelocity);
-                
+
                 // Sprite and bounding shape
                 smallAsteroid->SetSprite(mSprite);
                 shared_ptr<BoundingSphere> boundingSphere = make_shared<BoundingSphere>(smallAsteroid, 5.0f);
                 smallAsteroid->SetBoundingShape(boundingSphere);
-                
+
                 // Add to world
                 mWorld->AddObject(smallAsteroid);
             }
-            
+
             // Remove this asteroid
             mWorld->FlagForRemoval(GetThisPtr());
             return;
         }
 
+        // Spaceship collision
         if (gameObject->GetType() == GameObjectType("Spaceship"))
-		{
+        {
+            // Check if spaceship is invincible
+            shared_ptr<Spaceship> spaceship = static_pointer_cast<Spaceship>(gameObject);
+            if (spaceship->IsInvincible())
+            {
+                // Bounce off invincible spaceship
+                GLVector3f shipPosition = gameObject->GetPosition();
+
+                // Direction from ship to asteroid
+                GLVector3f bounceDirection = mPosition - shipPosition;
+                float distance = sqrt(bounceDirection.x * bounceDirection.x +
+                    bounceDirection.y * bounceDirection.y);
+
+                if (distance < 0.0001f) return;
+
+                // Normalize direction
+                bounceDirection.x /= distance;
+                bounceDirection.y /= distance;
+
+                // Reverse velocity with some randomness
+                mVelocity = -mVelocity + GLVector3f(
+                    ((float)rand() / RAND_MAX * 2.0f - 1.0f) * 2.0f,
+                    ((float)rand() / RAND_MAX * 2.0f - 1.0f) * 2.0f,
+                    0.0f
+                );
+
+                // Move away from ship to prevent sticking
+                mPosition = mPosition + bounceDirection * 1.0f;
+
+                return;
+            }
             mDestroyedByBullet = false;
-			mWorld->FlagForRemoval(GetThisPtr());
-		}
+            mWorld->FlagForRemoval(GetThisPtr());
+            return;
+        }
     }
 }
 

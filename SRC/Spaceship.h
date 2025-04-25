@@ -3,7 +3,6 @@
 
 #include "GameUtil.h"
 #include "GameObject.h"
-#include "Shape.h"
 
 class Spaceship : public GameObject
 {
