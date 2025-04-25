@@ -13,6 +13,7 @@
 #include "GUILabel.h"
 #include "Explosion.h"
 #include "ExtraLifePowerup.h"
+#include "InvincibilityPowerup.h"
 
 // PUBLIC INSTANCE CONSTRUCTORS ///////////////////////////////////////////////
 
@@ -49,8 +50,11 @@ void Asteroids::Start()
 	// Add this class as a listener of the score keeper
 	mScoreKeeper.AddListener(thisPtr);
 
-	// Set timer for the first powerup
-	SetTimer(POWERUP_SPAWN_INTERVAL, SPAWN_POWERUP);
+	// Set timer for the life powerup
+	SetTimer(POWERUP_SPAWN_INTERVAL, SPAWN_LIFE_POWERUP);
+
+	// Set timer for invincibility powerup
+	SetTimer(INVINCIBILITY_SPAWN_INTERVAL, SPAWN_INVINCIBILITY_POWERUP);
 
 	// Create an ambient light to show sprite textures
 	GLfloat ambient_light[] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -189,9 +193,14 @@ void Asteroids::OnTimer(int value)
 		mRetryLabel->SetVisible(true);
 	}
 
-	if (value == SPAWN_POWERUP)
+	if (value == SPAWN_LIFE_POWERUP)
 	{
 		SpawnExtraLifePowerup();
+	}
+
+	if (value == SPAWN_INVINCIBILITY_POWERUP)
+	{
+		SpawnInvincibilityPowerup();
 	}
 
 }
@@ -355,7 +364,33 @@ void Asteroids::SpawnExtraLifePowerup()
 	mGameWorld->AddObject(powerup);
 
 	// Set timer for next powerup
-	SetTimer(POWERUP_SPAWN_INTERVAL, SPAWN_POWERUP);
+	SetTimer(POWERUP_SPAWN_INTERVAL, SPAWN_LIFE_POWERUP);
 }
 
+void Asteroids::SpawnInvincibilityPowerup()
+{
+	// Create a powerup at a random position
+	float x = ((float)rand() / RAND_MAX) * 100.0f - 50.0f;
+	float y = ((float)rand() / RAND_MAX) * 100.0f - 50.0f;
+	GLVector3f position(x, y, 0.0f);
 
+	// Create the powerup
+	shared_ptr<GameObject> powerup = make_shared<InvincibilityPowerup>(position);
+
+	// Load the bubble sprite
+	Animation* bubble_anim = AnimationManager::GetInstance().GetAnimationByName("bubble");
+	shared_ptr<Sprite> powerup_sprite = make_shared<Sprite>(bubble_anim->GetWidth(), bubble_anim->GetHeight(), bubble_anim);
+	powerup->SetSprite(powerup_sprite);
+
+	// Set bounding shape
+	powerup->SetBoundingShape(make_shared<BoundingSphere>(powerup->GetThisPtr(), 4.0f));
+
+	// Set scale
+	powerup->SetScale(0.1f);
+
+	// Add to world
+	mGameWorld->AddObject(powerup);
+
+	// Set timer for next powerup
+	SetTimer(INVINCIBILITY_SPAWN_INTERVAL, SPAWN_INVINCIBILITY_POWERUP);
+}

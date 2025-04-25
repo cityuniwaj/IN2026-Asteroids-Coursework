@@ -27,12 +27,20 @@ public:
 	bool CollisionTest(shared_ptr<GameObject> o);
 	void OnCollision(const GameObjectList &objects);
 
+	void MakeInvincible(int duration);
+	bool IsInvincible() const { return mIsInvincible; }
+
 private:
 	float mThrust;
 
 	shared_ptr<Shape> mSpaceshipShape;
 	shared_ptr<Shape> mThrusterShape;
 	shared_ptr<Shape> mBulletShape;
+
+	bool mIsInvincible;
+	int mInvincibilityTime;
+	shared_ptr<Sprite> mNormalSprite;
+	shared_ptr<Sprite> mInvincibleSprite;
 };
 
 #endif

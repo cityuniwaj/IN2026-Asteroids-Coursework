@@ -9,6 +9,8 @@
 #include "ScoreKeeper.h"
 #include "Player.h"
 #include "IPlayerListener.h"
+#include "ExtraLifePowerup.h"
+#include "InvincibilityPowerup.h"
 
 class GameObject;
 class Spaceship;
@@ -67,13 +69,17 @@ private:
 	const static uint START_NEXT_LEVEL = 1;
 	const static uint CREATE_NEW_PLAYER = 2;
 	const static uint SHOW_RETRY_OPTION = 3;
-	const static uint SPAWN_POWERUP = 4;
+	const static uint SPAWN_LIFE_POWERUP = 4;
+	const static uint SPAWN_INVINCIBILITY_POWERUP = 5;
 
 	ScoreKeeper mScoreKeeper;
 	Player mPlayer;
 
 	const int POWERUP_SPAWN_INTERVAL = 60000; // THIS IS THE POWER UP SPAWNER INTERVAL IT IS RIGHT HERE DONT FORGET STOP FORGETTING
 	void SpawnExtraLifePowerup();
+
+	const int INVINCIBILITY_SPAWN_INTERVAL = 90000;
+	void SpawnInvincibilityPowerup();
 };
 
 #endif

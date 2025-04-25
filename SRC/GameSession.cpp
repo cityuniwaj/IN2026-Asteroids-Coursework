@@ -12,7 +12,7 @@ GameSession::GameSession(int argc, char *argv[])
 {
 	mGameWorld = new GameWorld();
 	mGameDisplay = new GameDisplay(400, 400);
-	mGameWindow = new GameWindow(400, 400, -1, -1, "Asteroid Game");
+	mGameWindow = new GameWindow(800, 800, -1, -1, "Asteroid Game");
 	mGameWindow->SetDisplay(mGameDisplay);
 	mGameWindow->SetWorld(mGameWorld);
 	// Set the window for this session

@@ -25,12 +25,11 @@ ExtraLifePowerup::~ExtraLifePowerup(void)
 void ExtraLifePowerup::Update(int t)
 {
     GameObject::Update(t);
-
     mTimeToLive -= t;
-
     if (mTimeToLive <= 0)
     {
-        if (mWorld) mWorld->FlagForRemoval(GetThisPtr());
+        //if (mWorld) mWorld->FlagForRemoval(GetThisPtr());
+        return;
     }
 }
 
