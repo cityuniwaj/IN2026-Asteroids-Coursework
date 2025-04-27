@@ -29,6 +29,10 @@ public:
 	void MakeInvincible(int duration);
 	bool IsInvincible() const { return mIsInvincible; }
 
+	void UpgradeWeapon(int duration);
+	bool HasUpgradedWeapon() const { return mWeaponUpgraded; }
+	void ShootUpgradedWeapon();
+
 private:
 	float mThrust;
 
@@ -40,6 +44,11 @@ private:
 	int mInvincibilityTime;
 	shared_ptr<Sprite> mNormalSprite;
 	shared_ptr<Sprite> mInvincibleSprite;
+
+protected:
+	bool mWeaponUpgraded;
+	int mWeaponUpgradeTimeLeft;
+	shared_ptr<Shape> mExplodingBulletShape;
 };
 
 #endif

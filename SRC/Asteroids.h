@@ -12,6 +12,7 @@
 #include "ExtraLifePowerup.h"
 #include "InvincibilityPowerup.h"
 
+
 class GameObject;
 class Spaceship;
 class GUILabel;
@@ -71,6 +72,7 @@ private:
 	const static uint SHOW_RETRY_OPTION = 3;
 	const static uint SPAWN_LIFE_POWERUP = 4;
 	const static uint SPAWN_INVINCIBILITY_POWERUP = 5;
+	const static uint SPAWN_WEAPONS_POWERUP = 6;
 
 	ScoreKeeper mScoreKeeper;
 	Player mPlayer;
@@ -80,6 +82,9 @@ private:
 
 	const int INVINCIBILITY_SPAWN_INTERVAL = 90000;
 	void SpawnInvincibilityPowerup();
+
+	const int WEAPONS_SPAWN_INTERVAL = 10000;
+	void SpawnWeaponsPowerup();
 };
 
 #endif

@@ -106,17 +106,20 @@
     <ClCompile Include="..\..\SRC\Asteroid.cpp" />
     <ClCompile Include="..\..\src\Asteroids.cpp" />
     <ClCompile Include="..\..\src\Bullet.cpp" />
+    <ClCompile Include="..\..\SRC\ExplodingBullet.cpp" />
     <ClCompile Include="..\..\SRC\Explosion.cpp" />
     <ClCompile Include="..\..\SRC\ExtraLifePowerup.cpp" />
     <ClCompile Include="..\..\SRC\InvincibilityPowerup.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\SRC\SmallAsteroid.cpp" />
     <ClCompile Include="..\..\src\Spaceship.cpp" />
+    <ClCompile Include="..\..\SRC\WeaponsPowerup.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SRC\Asteroid.h" />
     <ClInclude Include="..\..\src\Asteroids.h" />
     <ClInclude Include="..\..\src\Bullet.h" />
+    <ClInclude Include="..\..\SRC\ExplodingBullet.h" />
     <ClInclude Include="..\..\SRC\Explosion.h" />
     <ClInclude Include="..\..\SRC\ExtraLifePowerup.h" />
     <ClInclude Include="..\..\SRC\InvincibilityPowerup.h" />
@@ -126,6 +129,7 @@
     <ClInclude Include="..\..\SRC\ScoreKeeper.h" />
     <ClInclude Include="..\..\SRC\SmallAsteroid.h" />
     <ClInclude Include="..\..\src\Spaceship.h" />
+    <ClInclude Include="..\..\SRC\WeaponsPowerup.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">

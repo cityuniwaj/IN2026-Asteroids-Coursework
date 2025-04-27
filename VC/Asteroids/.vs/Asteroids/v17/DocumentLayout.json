@@ -3,22 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\VC\\Asteroids\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\src\\Asteroids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\src\\Asteroids.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\src\\Asteroids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\WeaponsPowerup.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\ExplodingBullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\src\\Spaceship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\InvincibilityPowerup.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\src\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\InvincibilityPowerup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\ExplodingBullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\WeaponsPowerup.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97AF88B3-4E3C-43B5-8770-C655BCAAB734}|Asteroids.vcxproj|C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\src\\Spaceship.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -31,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,94 +49,115 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Asteroid.cpp",
-              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroid.cpp",
-              "RelativeDocumentMoniker": "..\\..\\SRC\\Asteroid.cpp",
-              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroid.cpp",
-              "RelativeToolTip": "..\\..\\SRC\\Asteroid.cpp",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAH0AAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-25T17:45:13.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Spaceship.cpp",
-              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.cpp",
-              "RelativeDocumentMoniker": "..\\..\\SRC\\Spaceship.cpp",
-              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.cpp",
-              "RelativeToolTip": "..\\..\\SRC\\Spaceship.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-25T15:23:05.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Spaceship.h",
-              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.h",
-              "RelativeDocumentMoniker": "..\\..\\SRC\\Spaceship.h",
-              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.h",
-              "RelativeToolTip": "..\\..\\SRC\\Spaceship.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-25T15:22:35.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InvincibilityPowerup.cpp",
-              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\InvincibilityPowerup.cpp",
-              "RelativeDocumentMoniker": "..\\..\\SRC\\InvincibilityPowerup.cpp",
-              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\InvincibilityPowerup.cpp",
-              "RelativeToolTip": "..\\..\\SRC\\InvincibilityPowerup.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-25T15:20:12.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "InvincibilityPowerup.h",
-              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\InvincibilityPowerup.h",
-              "RelativeDocumentMoniker": "..\\..\\SRC\\InvincibilityPowerup.h",
-              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\InvincibilityPowerup.h",
-              "RelativeToolTip": "..\\..\\SRC\\InvincibilityPowerup.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-25T15:20:48.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Asteroids.cpp",
-              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroids.cpp",
-              "RelativeDocumentMoniker": "..\\..\\SRC\\Asteroids.cpp",
-              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroids.cpp",
-              "RelativeToolTip": "..\\..\\SRC\\Asteroids.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-24T23:10:36.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Asteroids.h",
               "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroids.h",
               "RelativeDocumentMoniker": "..\\..\\SRC\\Asteroids.h",
               "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroids.h",
               "RelativeToolTip": "..\\..\\SRC\\Asteroids.h",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAFQAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-25T15:32:57.47Z",
+              "WhenOpened": "2025-04-27T14:57:32.914Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Asteroids.cpp",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroids.cpp",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\Asteroids.cpp",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Asteroids.cpp",
+              "RelativeToolTip": "..\\..\\SRC\\Asteroids.cpp",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T14:57:32.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Spaceship.h",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.h",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\Spaceship.h",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.h",
+              "RelativeToolTip": "..\\..\\SRC\\Spaceship.h",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-27T14:49:20.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Spaceship.cpp",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.cpp",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\Spaceship.cpp",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Spaceship.cpp",
+              "RelativeToolTip": "..\\..\\SRC\\Spaceship.cpp",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAswNQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T14:49:19.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExplodingBullet.h",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\ExplodingBullet.h",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\ExplodingBullet.h",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\ExplodingBullet.h",
+              "RelativeToolTip": "..\\..\\SRC\\ExplodingBullet.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-27T14:44:04.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExplodingBullet.cpp",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\ExplodingBullet.cpp",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\ExplodingBullet.cpp",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\ExplodingBullet.cpp",
+              "RelativeToolTip": "..\\..\\SRC\\ExplodingBullet.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T14:43:50.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeaponsPowerup.cpp",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\WeaponsPowerup.cpp",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\WeaponsPowerup.cpp",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\WeaponsPowerup.cpp",
+              "RelativeToolTip": "..\\..\\SRC\\WeaponsPowerup.cpp",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwDYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T14:43:21.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Bullet.cpp",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Bullet.cpp",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\Bullet.cpp",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\Bullet.cpp",
+              "RelativeToolTip": "..\\..\\SRC\\Bullet.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T15:14:34.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeaponsPowerup.h",
+              "DocumentMoniker": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\WeaponsPowerup.h",
+              "RelativeDocumentMoniker": "..\\..\\SRC\\WeaponsPowerup.h",
+              "ToolTip": "C:\\Users\\wuddi\\OneDrive - City, University of London\\Year 2\\Term 2\\IN2026 Games Technology\\Coursework\\IN2026-Asteroids-Coursework\\SRC\\WeaponsPowerup.h",
+              "RelativeToolTip": "..\\..\\SRC\\WeaponsPowerup.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-27T14:43:32.49Z"
             }
           ]
         }

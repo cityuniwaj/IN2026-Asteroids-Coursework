@@ -14,6 +14,7 @@
 #include "Explosion.h"
 #include "ExtraLifePowerup.h"
 #include "InvincibilityPowerup.h"
+#include "WeaponsPowerup.h"
 
 // PUBLIC INSTANCE CONSTRUCTORS ///////////////////////////////////////////////
 
@@ -56,6 +57,9 @@ void Asteroids::Start()
 	// Set timer for invincibility powerup
 	SetTimer(INVINCIBILITY_SPAWN_INTERVAL, SPAWN_INVINCIBILITY_POWERUP);
 
+	// Set timer for weapons powerup
+	SetTimer(WEAPONS_SPAWN_INTERVAL, SPAWN_WEAPONS_POWERUP);
+
 	// Create an ambient light to show sprite textures
 	GLfloat ambient_light[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	GLfloat diffuse_light[] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -69,6 +73,7 @@ void Asteroids::Start()
 	Animation *shipBubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("shipBubble", 128, 128, 128, 128, "shipBubble_fs.png");
 	Animation *heart_anim = AnimationManager::GetInstance().CreateAnimationFromFile("heart", 128, 128, 128, 128, "heart_fs.png");
 	Animation *bubble_anim = AnimationManager::GetInstance().CreateAnimationFromFile("bubble", 128, 128, 128, 128, "bubble_fs.png");
+	Animation* weapon_anim = AnimationManager::GetInstance().CreateAnimationFromFile("weapon", 128, 128, 128, 128, "weapon_fs.png");
 
 	// Create a spaceship and add it to the world
 	mGameWorld->AddObject(CreateSpaceship());
@@ -146,7 +151,8 @@ void Asteroids::OnSpecialKeyReleased(int key, int x, int y)
 
 void Asteroids::OnObjectRemoved(GameWorld* world, shared_ptr<GameObject> object)
 {
-	if (object->GetType() == GameObjectType("Asteroid"))
+	if (object->GetType() == GameObjectType("Asteroid") || 
+		object->GetType() == GameObjectType("SmallAsteroid"))
 	{
 		shared_ptr<GameObject> explosion = CreateExplosion();
 		explosion->SetPosition(object->GetPosition());
@@ -203,6 +209,10 @@ void Asteroids::OnTimer(int value)
 		SpawnInvincibilityPowerup();
 	}
 
+	if (value == SPAWN_WEAPONS_POWERUP)
+	{
+		SpawnWeaponsPowerup();
+	}
 }
 
 // PROTECTED INSTANCE METHODS /////////////////////////////////////////////////
@@ -393,4 +403,32 @@ void Asteroids::SpawnInvincibilityPowerup()
 
 	// Set timer for next powerup
 	SetTimer(INVINCIBILITY_SPAWN_INTERVAL, SPAWN_INVINCIBILITY_POWERUP);
+}
+
+void Asteroids::SpawnWeaponsPowerup()
+{
+	// Create powerup
+	float x = ((float)rand() / RAND_MAX) * 100.0f - 50.0f;
+	float y = ((float)rand() / RAND_MAX) * 100.0f - 50.0f;
+	GLVector3f position(x, y, 0.0f);
+
+	// Create the powerup
+	shared_ptr<GameObject> powerup = make_shared<WeaponsPowerup>(position);
+
+	// Load the weapon sprite
+	Animation* weapon_anim = AnimationManager::GetInstance().GetAnimationByName("weapon");
+	shared_ptr<Sprite> powerup_sprite = make_shared<Sprite>(weapon_anim->GetWidth(), weapon_anim->GetHeight(), weapon_anim);
+	powerup->SetSprite(powerup_sprite);
+
+	// Set bounding shape
+	powerup->SetBoundingShape(make_shared<BoundingSphere>(powerup->GetThisPtr(), 4.0f));
+
+	// Set scale
+	powerup->SetScale(0.1f);
+
+	// Add to world
+	mGameWorld->AddObject(powerup);
+
+	// Set timer for next powerup
+	SetTimer(WEAPONS_SPAWN_INTERVAL, SPAWN_WEAPONS_POWERUP);
 }
